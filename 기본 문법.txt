@@ -18,6 +18,16 @@ using ll = long long;
 // long long 대신 ll 역시 long long과 같은 의미를 가지게 하는 코드
 // using pii = pair<int,int>; 와 같이 긴 자료형 이름을 코드에서 줄여서 사용하고 싶을 때 사용할 수 있다.
 
+memset(시작 주소, 0 또는 -1, sizeof(자료구조));
+// 예시) int arr[100]; memset(arr, 0, sizeof(arr));
+// 자료구조를 전부 0 또는 -1 로 초기화 하기 위해 쓰는 코드
+// 0 이나 -1 외에는 의도한 값이 들어가지 않을 것이다.
+// 궁금하다면 int arr[100]; memset(arr, 1, sizeof(arr)); 을 실행 후 arr[0]을 출력해보자.
+
+fill(시작 주소, 끝 주소, 채울 값);
+// 예시) int arr[10]; fill(arr, arr+10, 1234); -> arr[0]~arr[9]에 1234가 들어간다.
+// 자료구조(주로 배열)를 특정 값으로 초기화하기 위해 쓰는 코드
+
 
 
 <자료형>
