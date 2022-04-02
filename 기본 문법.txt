@@ -28,6 +28,24 @@ fill(시작 주소, 끝 주소, 채울 값);
 // 예시) int arr[10]; fill(arr, arr+10, 1234); -> arr[0]~arr[9]에 1234가 들어간다.
 // 자료구조(주로 배열)를 특정 값으로 초기화하기 위해 쓰는 코드
 
+sort(시작 주소, 끝 주소, 비교 함수);
+// 예시) 
+int arr[10]; sort(arr, arr+10); // arr[0]~arr[9] 오름차순 정렬
+vector<int> v; sort(v.begin(), v.end()); // v의 원소 오름차순 정렬
+int arr[10]; sort(arr+1, arr+8, greater<>()); // arr[1]~arr[7] 내림차순 정렬
+vector<int> v; sort(v.begin()+2, v.begin()+6, greater<>()); // v[2]~v[5] 내림차순 정렬
+bool cmp(ll x, ll y) {return abs(x)<abs(y);} ll arr[10]; sort(arr,arr+10,cmp);
+// arr[0]~arr[9] 절대값이 오름차순이 되도록 정렬
+
+bool cmp(ll x, ll y) {
+	if(abs(x) != abs(y)) return abs(x)<abs(y);
+	return x>y;
+} 
+ll arr[10]; sort(arr,arr+10,cmp);
+// arr[0]~arr[9] 절대값이 오름차순이 되도록, 단 절대값이 같을 시 큰 수가 앞에 오도록 정렬
+
+ll arr[10]; sort(arr, arr+10, [](ll x, ll y){return abs(x)<abs(y);});
+//  arr[0]~arr[9] 절대값이 오름차순이 되도록 정렬
 
 
 <자료형>
@@ -75,3 +93,5 @@ for(자료형 i:자료구조) (예시: for(long long i: v) //v는 vector<long lo
 1. min({a,b,c,d,e}) max({a,b,c,d}) 와 같이 3개 이상의 값의 최대값/최소값을 구할 수 있다.
 2. 아스키코드에서 '0'은 48, 'A'는 65, 'a'는 97의 값을 가진다.
 3. 띄어쓰기가 포함된 한 줄을 입력받는 것은 getline(cin, 문자열)
+4. INT_MAX : int 최대값, LLONG_MAX : long long 최대값 (limits.h)
+
