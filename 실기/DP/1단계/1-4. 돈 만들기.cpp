@@ -8,10 +8,10 @@ int main(void) {
     int coin[x]; 
     for(int i=0; i<x; i++) cin>>coin[i];
 	dp[0]=0;
-    for (int i=1; i<=n; i++) {
+	for (int i=1; i<=n; i++) {
 		dp[i] = 1000001; // 초기값 큰 값 설정
         for (int j: coin) { // j원짜리 동전  
-            if (i-j	 >= 0) 
+			if (i-j>= 0) 
 			{
 				dp[i] = min(dp[i], dp[i-j] + 1); // i원을 (j원 1개) + (i - j원을 만드는 동전의 최소개수) 로 만드는 방법
 			}
